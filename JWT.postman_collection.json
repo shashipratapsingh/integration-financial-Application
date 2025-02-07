@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "0598d09b-fbe3-43e4-8c0f-ee5418d8f92d",
+		"name": "CSLA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30398232"
+	},
+	"item": [
+		{
+			"name": "Admin Dashboard",
+			"item": [
+				{
+					"name": "Upload Docs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJBZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4MzYyNzgsImV4cCI6MTczODgzOTg3OH0.txjzgqokvC4HQrm9ULA5mcJm9TrVN1KPOHWy2KfSY8s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "uploadDocs",
+									"value": "{  \"documentsName\":\"documentsName\",    \"descriptions\":\"descriptions\"}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "docsFileFile",
+									"contentType": "application/json",
+									"type": "file",
+									"src": "WhatsApp.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8084/admin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Doc By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJBZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4Mzc3NDcsImV4cCI6MTczODg0MTM0N30.6_gbZDSEiE346MHxN3f1niWe00UEkmjz69jPYE6lTeU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/admin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Helthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/admin/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"admin",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"shashi@gmail.com\",\r\n\r\n    \"password\":\"1234\",\r\n    \"roles\":\"Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/auth/sign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"auth",
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"Admin@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User DashBoard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InNhY2hpbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4MzM5MjMsImV4cCI6MTczODgzNzUyM30.NxYgq9_O0De2b7rAtW3PopyDnnIntUiDwty1Lht5OrI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manager Dashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InNhY2hpbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4MzM5MjMsImV4cCI6MTczODgzNzUyM30.NxYgq9_O0De2b7rAtW3PopyDnnIntUiDwty1Lht5OrI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/manager/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"manager",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJzaGFzaGlAZ21haWwuY29tIiwiaWF0IjoxNzM4ODMwNDczLCJleHAiOjE3Mzg4MzQwNzN9.aZvMUWGIZOlbi0Jp9eMj6k1yMWjsHjsv7eOd2ZK54Ps",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "candidateDetails",
+							"value": "{\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"623456789012\",\"panCardNumber\":\"FBCDE1234F\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "aadharCardFile",
+							"contentType": "application/json",
+							"type": "file",
+							"src": "WhatsApp Image 2025-02-04 at 18.26.01.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"user",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -H \"Content-Type: multipart/form-data\" \\\r\n  -F 'candidateDetails={\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"};type=application/json' \\\r\n  -F 'uploadAadharCard=@/path/to/aadhar_card.pdf;type=application/pdf' \\\r\n  http://localhost:8080/user/\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/manager/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsInN1YiI6Im1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzM4NzYzNjY3LCJleHAiOjE3Mzg3NjcyNjd9.ASq36QqoxYEp8v1OXxiHOdsp0pQ5hNli0ZnO9w14ww4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "managerProfile",
+							"value": "{\"managerName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "aadharCardFile",
+							"contentType": "application/json",
+							"type": "file",
+							"src": "WhatsApp1.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/manager/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"manager",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:8084/manager/' \\\r\n--header 'Authorization: Bearer YOUR_JWT_TOKEN' \\\r\n--form 'managerProfile={\"managerName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"}' \\\r\n--form 'aadharCardFile=@\"path/to/WhatsA1.jpeg\"'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Manager profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJzaGFzaGlAZ21haWwuY29tIiwiaWF0IjoxNzM4ODMxMTY2LCJleHAiOjE3Mzg4MzQ3NjZ9.6we59ZfF1mBY4fVj8bFuqCGhfGpPqDx8MsvxMmTuol4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "candidateDetails",
+							"value": "{\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"223456789012\",\"panCardNumber\":\"BBCDE1234F\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "aadharCardFile",
+							"contentType": "application/json",
+							"type": "file",
+							"src": "img-worlds-of-adventure.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
