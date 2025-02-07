@@ -16,26 +16,27 @@ public class LoanController {
     private LoanService loanService;
 
     @PostMapping("/apply")
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
     public LoanApplication applyForLoan(@RequestBody LoanApplication loanApplication) {
         return loanService.applyForLoan(loanApplication);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
     public LoanApplication getLoanApplication(@PathVariable Long id) {
         return loanService.getLoanApplicationById(id);
     }
 
     @PutMapping("/approve/{id}")
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
     public LoanApplication approveLoan(@PathVariable Long id, @RequestParam Long adminId, @RequestParam String comments) {
         return loanService.approveLoan(id, adminId, comments);
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
     public List<LoanApplication> getAllLoanApplications() {
         return loanService.getAllLoanApplications();
+    }
+
+    @PostMapping("/kyc/verify/{id}")
+    public LoanApplication verifyKYC(@PathVariable Long id, @RequestParam String aadhaarNumber, @RequestParam String panNumber, @RequestParam String kycStatus) {
+        return loanService.verifyKYC(id, aadhaarNumber, panNumber, kycStatus);
     }
 }

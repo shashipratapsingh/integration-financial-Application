@@ -19,6 +19,7 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public LoanApplication applyForLoan(LoanApplication loanApplication) {
         loanApplication.setApplicationStatus("Pending");
+        loanApplication.setKycStatus("Pending");
         return loanRepository.save(loanApplication);
     }
 
@@ -44,5 +45,18 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public List<LoanApplication> getAllLoanApplications() {
         return loanRepository.findAll();
+    }
+
+    @Override
+    public LoanApplication verifyKYC(Long id, String aadhaarNumber, String panNumber, String kycStatus) {
+        Optional<LoanApplication> optionalLoan = loanRepository.findById(id);
+        if (optionalLoan.isPresent()) {
+            LoanApplication loan = optionalLoan.get();
+            loan.setAadhaarNumber(aadhaarNumber);
+            loan.setPanNumber(panNumber);
+            loan.setKycStatus(kycStatus);
+            return loanRepository.save(loan);
+        }
+        return null;
     }
 }

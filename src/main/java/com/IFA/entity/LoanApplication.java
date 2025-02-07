@@ -33,6 +33,9 @@ public class LoanApplication {
     private Long adminId;
     private String reviewComments;
     private Date approvalDate;
+    private String kycStatus; // Pending, Verified, Rejected
+    private String aadhaarNumber;
+    private String panNumber;
 
     @Column(name = "createdBy")
     private Date createdBy;

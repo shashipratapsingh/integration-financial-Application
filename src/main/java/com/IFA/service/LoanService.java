@@ -9,4 +9,5 @@ public interface LoanService {
     LoanApplication getLoanApplicationById(Long id);
     LoanApplication approveLoan(Long id, Long adminId, String comments);
     List<LoanApplication> getAllLoanApplications();
+    LoanApplication verifyKYC(Long id, String aadhaarNumber, String panNumber, String kycStatus);
 }
