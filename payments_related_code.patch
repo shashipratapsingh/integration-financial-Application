@@ -1,0 +1,965 @@
+Subject: [PATCH] payments related code
+---
+Index: target/maven-archiver/pom.properties
+===================================================================
+diff --git a/target/maven-archiver/pom.properties b/target/maven-archiver/pom.properties
+deleted file mode 100644
+--- a/target/maven-archiver/pom.properties	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ /dev/null	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
+@@ -1,3 +0,0 @@
+-artifactId=CSLA
+-groupId=com.auth
+-version=0.0.1-SNAPSHOT
+Index: target/surefire-reports/com.CSLA.AuthServicesApplicationTests.txt
+===================================================================
+diff --git a/target/surefire-reports/com.CSLA.AuthServicesApplicationTests.txt b/target/surefire-reports/com.CSLA.AuthServicesApplicationTests.txt
+deleted file mode 100644
+--- a/target/surefire-reports/com.CSLA.AuthServicesApplicationTests.txt	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ /dev/null	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
+@@ -1,4 +0,0 @@
+--------------------------------------------------------------------------------
+-Test set: com.CSLA.AuthServicesApplicationTests
+--------------------------------------------------------------------------------
+-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.178 s -- in com.CSLA.AuthServicesApplicationTests
+Index: target/surefire-reports/TEST-com.CSLA.AuthServicesApplicationTests.xml
+===================================================================
+diff --git a/target/surefire-reports/TEST-com.CSLA.AuthServicesApplicationTests.xml b/target/surefire-reports/TEST-com.CSLA.AuthServicesApplicationTests.xml
+deleted file mode 100644
+--- a/target/surefire-reports/TEST-com.CSLA.AuthServicesApplicationTests.xml	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ /dev/null	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
+@@ -1,117 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.CSLA.AuthServicesApplicationTests" time="5.178" tests="1" errors="0" skipped="0" failures="0">
+-  <properties>
+-    <property name="java.specification.version" value="23"/>
+-    <property name="sun.cpu.isalist" value="amd64"/>
+-    <property name="sun.jnu.encoding" value="Cp1252"/>
+-    <property name="java.class.path" value="D:\BeProjects\backend\CSLA\target\test-classes;D:\BeProjects\backend\CSLA\target\classes;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.4.0\spring-boot-starter-data-jpa-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.0\spring-boot-starter-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot\3.4.0\spring-boot-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.0\spring-boot-autoconfigure-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.0\spring-boot-starter-logging-3.4.0.jar;C:\Users\91857\.m2\repository\ch\qos\logback\logback-classic\1.5.12\logback-classic-1.5.12.jar;C:\Users\91857\.m2\repository\ch\qos\logback\logback-core\1.5.12\logback-core-1.5.12.jar;C:\Users\91857\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.1\log4j-to-slf4j-2.24.1.jar;C:\Users\91857\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.1\log4j-api-2.24.1.jar;C:\Users\91857\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\91857\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\91857\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.4.0\spring-boot-starter-jdbc-3.4.0.jar;C:\Users\91857\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-jdbc\6.2.0\spring-jdbc-6.2.0.jar;C:\Users\91857\.m2\repository\org\hibernate\orm\hibernate-core\6.6.2.Final\hibernate-core-6.6.2.Final.jar;C:\Users\91857\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\91857\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\91857\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\91857\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\91857\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\91857\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\91857\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\91857\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\91857\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\91857\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\91857\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\91857\.m2\repository\org\springframework\data\spring-data-jpa\3.4.0\spring-data-jpa-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\data\spring-data-commons\3.4.0\spring-data-commons-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-orm\6.2.0\spring-orm-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-context\6.2.0\spring-context-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-tx\6.2.0\spring-tx-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-beans\6.2.0\spring-beans-6.2.0.jar;C:\Users\91857\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\91857\.m2\repository\org\springframework\spring-aspects\6.2.0\spring-aspects-6.2.0.jar;C:\Users\91857\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.4.0\spring-boot-starter-security-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-aop\6.2.0\spring-aop-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-config\6.4.1\spring-security-config-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-web\6.4.1\spring-security-web-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-expression\6.2.0\spring-expression-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.4.0\spring-boot-starter-validation-3.4.0.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.33\tomcat-embed-el-10.1.33.jar;C:\Users\91857\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\91857\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.4.0\spring-boot-starter-web-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.4.0\spring-boot-starter-json-3.4.0.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.1\jackson-datatype-jdk8-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.1\jackson-datatype-jsr310-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.1\jackson-module-parameter-names-2.18.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.4.0\spring-boot-starter-tomcat-3.4.0.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.33\tomcat-embed-core-10.1.33.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.33\tomcat-embed-websocket-10.1.33.jar;C:\Users\91857\.m2\repository\org\springframework\spring-web\6.2.0\spring-web-6.2.0.jar;C:\Users\91857\.m2\repository\io\micrometer\micrometer-observation\1.14.1\micrometer-observation-1.14.1.jar;C:\Users\91857\.m2\repository\io\micrometer\micrometer-commons\1.14.1\micrometer-commons-1.14.1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-webmvc\6.2.0\spring-webmvc-6.2.0.jar;C:\Users\91857\.m2\repository\com\mysql\mysql-connector-j\9.1.0\mysql-connector-j-9.1.0.jar;C:\Users\91857\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\91857\.m2\repository\org\projectlombok\lombok\1.18.36\lombok-1.18.36.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.1\jackson-databind-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.1\jackson-annotations-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.1\jackson-core-2.18.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.4.0\spring-boot-starter-test-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-test\3.4.0\spring-boot-test-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.4.0\spring-boot-test-autoconfigure-3.4.0.jar;C:\Users\91857\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\91857\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\91857\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\91857\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\91857\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\91857\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\91857\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\91857\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\91857\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.3\junit-jupiter-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.3\junit-jupiter-api-5.11.3.jar;C:\Users\91857\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\91857\.m2\repository\org\junit\platform\junit-platform-commons\1.11.3\junit-platform-commons-1.11.3.jar;C:\Users\91857\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.3\junit-jupiter-params-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.3\junit-jupiter-engine-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\platform\junit-platform-engine\1.11.3\junit-platform-engine-1.11.3.jar;C:\Users\91857\.m2\repository\org\mockito\mockito-core\5.14.2\mockito-core-5.14.2.jar;C:\Users\91857\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.10\byte-buddy-agent-1.15.10.jar;C:\Users\91857\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\91857\.m2\repository\org\mockito\mockito-junit-jupiter\5.14.2\mockito-junit-jupiter-5.14.2.jar;C:\Users\91857\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\91857\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-core\6.2.0\spring-core-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-jcl\6.2.0\spring-jcl-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-test\6.2.0\spring-test-6.2.0.jar;C:\Users\91857\.m2\repository\org\xmlunit\xmlunit-core\2.10.0\xmlunit-core-2.10.0.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-test\6.4.1\spring-security-test-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-core\6.4.1\spring-security-core-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-crypto\6.4.1\spring-security-crypto-6.4.1.jar;"/>
+-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+-    <property name="sun.arch.data.model" value="64"/>
+-    <property name="user.variant" value=""/>
+-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+-    <property name="user.timezone" value="Asia/Calcutta"/>
+-    <property name="org.jboss.logging.provider" value="slf4j"/>
+-    <property name="os.name" value="Windows 11"/>
+-    <property name="java.vm.specification.version" value="23"/>
+-    <property name="APPLICATION_NAME" value="Auth-Services"/>
+-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+-    <property name="user.country" value="IN"/>
+-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
+-    <property name="sun.java.command" value="C:\Users\91857\AppData\Local\Temp\surefire16319362166267629979\surefirebooter-20250206174930346_3.jar C:\Users\91857\AppData\Local\Temp\surefire16319362166267629979 2025-02-06T17-49-30_225-jvmRun1 surefire-20250206174930346_1tmp surefire_0-20250206174930346_2tmp"/>
+-    <property name="jdk.debug" value="release"/>
+-    <property name="surefire.test.class.path" value="D:\BeProjects\backend\CSLA\target\test-classes;D:\BeProjects\backend\CSLA\target\classes;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.4.0\spring-boot-starter-data-jpa-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.0\spring-boot-starter-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot\3.4.0\spring-boot-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.0\spring-boot-autoconfigure-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.0\spring-boot-starter-logging-3.4.0.jar;C:\Users\91857\.m2\repository\ch\qos\logback\logback-classic\1.5.12\logback-classic-1.5.12.jar;C:\Users\91857\.m2\repository\ch\qos\logback\logback-core\1.5.12\logback-core-1.5.12.jar;C:\Users\91857\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.1\log4j-to-slf4j-2.24.1.jar;C:\Users\91857\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.1\log4j-api-2.24.1.jar;C:\Users\91857\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\91857\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\91857\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.4.0\spring-boot-starter-jdbc-3.4.0.jar;C:\Users\91857\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-jdbc\6.2.0\spring-jdbc-6.2.0.jar;C:\Users\91857\.m2\repository\org\hibernate\orm\hibernate-core\6.6.2.Final\hibernate-core-6.6.2.Final.jar;C:\Users\91857\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\91857\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\91857\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\91857\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\91857\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\91857\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\91857\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\91857\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\91857\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\91857\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\91857\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\91857\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\91857\.m2\repository\org\springframework\data\spring-data-jpa\3.4.0\spring-data-jpa-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\data\spring-data-commons\3.4.0\spring-data-commons-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-orm\6.2.0\spring-orm-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-context\6.2.0\spring-context-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-tx\6.2.0\spring-tx-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-beans\6.2.0\spring-beans-6.2.0.jar;C:\Users\91857\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\91857\.m2\repository\org\springframework\spring-aspects\6.2.0\spring-aspects-6.2.0.jar;C:\Users\91857\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.4.0\spring-boot-starter-security-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-aop\6.2.0\spring-aop-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-config\6.4.1\spring-security-config-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-web\6.4.1\spring-security-web-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-expression\6.2.0\spring-expression-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.4.0\spring-boot-starter-validation-3.4.0.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.33\tomcat-embed-el-10.1.33.jar;C:\Users\91857\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\91857\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.4.0\spring-boot-starter-web-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.4.0\spring-boot-starter-json-3.4.0.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.1\jackson-datatype-jdk8-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.1\jackson-datatype-jsr310-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.1\jackson-module-parameter-names-2.18.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.4.0\spring-boot-starter-tomcat-3.4.0.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.33\tomcat-embed-core-10.1.33.jar;C:\Users\91857\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.33\tomcat-embed-websocket-10.1.33.jar;C:\Users\91857\.m2\repository\org\springframework\spring-web\6.2.0\spring-web-6.2.0.jar;C:\Users\91857\.m2\repository\io\micrometer\micrometer-observation\1.14.1\micrometer-observation-1.14.1.jar;C:\Users\91857\.m2\repository\io\micrometer\micrometer-commons\1.14.1\micrometer-commons-1.14.1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-webmvc\6.2.0\spring-webmvc-6.2.0.jar;C:\Users\91857\.m2\repository\com\mysql\mysql-connector-j\9.1.0\mysql-connector-j-9.1.0.jar;C:\Users\91857\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\91857\.m2\repository\org\projectlombok\lombok\1.18.36\lombok-1.18.36.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\91857\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.1\jackson-databind-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.1\jackson-annotations-2.18.1.jar;C:\Users\91857\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.1\jackson-core-2.18.1.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.4.0\spring-boot-starter-test-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-test\3.4.0\spring-boot-test-3.4.0.jar;C:\Users\91857\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.4.0\spring-boot-test-autoconfigure-3.4.0.jar;C:\Users\91857\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\91857\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\91857\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\91857\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\91857\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\91857\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\91857\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\91857\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\91857\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.3\junit-jupiter-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.3\junit-jupiter-api-5.11.3.jar;C:\Users\91857\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\91857\.m2\repository\org\junit\platform\junit-platform-commons\1.11.3\junit-platform-commons-1.11.3.jar;C:\Users\91857\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.3\junit-jupiter-params-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.3\junit-jupiter-engine-5.11.3.jar;C:\Users\91857\.m2\repository\org\junit\platform\junit-platform-engine\1.11.3\junit-platform-engine-1.11.3.jar;C:\Users\91857\.m2\repository\org\mockito\mockito-core\5.14.2\mockito-core-5.14.2.jar;C:\Users\91857\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.10\byte-buddy-agent-1.15.10.jar;C:\Users\91857\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\91857\.m2\repository\org\mockito\mockito-junit-jupiter\5.14.2\mockito-junit-jupiter-5.14.2.jar;C:\Users\91857\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\91857\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\91857\.m2\repository\org\springframework\spring-core\6.2.0\spring-core-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-jcl\6.2.0\spring-jcl-6.2.0.jar;C:\Users\91857\.m2\repository\org\springframework\spring-test\6.2.0\spring-test-6.2.0.jar;C:\Users\91857\.m2\repository\org\xmlunit\xmlunit-core\2.10.0\xmlunit-core-2.10.0.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-test\6.4.1\spring-security-test-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-core\6.4.1\spring-security-core-6.4.1.jar;C:\Users\91857\.m2\repository\org\springframework\security\spring-security-crypto\6.4.1\spring-security-crypto-6.4.1.jar;"/>
+-    <property name="sun.cpu.endian" value="little"/>
+-    <property name="user.home" value="C:\Users\91857"/>
+-    <property name="user.language" value="en"/>
+-    <property name="java.specification.vendor" value="Oracle Corporation"/>
+-    <property name="java.version.date" value="2024-09-17"/>
+-    <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
+-    <property name="file.separator" value="\"/>
+-    <property name="basedir" value="D:\BeProjects\backend\CSLA"/>
+-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+-    <property name="line.separator" value="&#10;"/>
+-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+-    <property name="java.specification.name" value="Java Platform API Specification"/>
+-    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+-    <property name="java.awt.headless" value="true"/>
+-    <property name="surefire.real.class.path" value="C:\Users\91857\AppData\Local\Temp\surefire16319362166267629979\surefirebooter-20250206174930346_3.jar"/>
+-    <property name="user.script" value=""/>
+-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+-    <property name="java.runtime.version" value="23+37-2369"/>
+-    <property name="user.name" value="91857"/>
+-    <property name="stdout.encoding" value="Cp1252"/>
+-    <property name="path.separator" value=";"/>
+-    <property name="os.version" value="10.0"/>
+-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+-    <property name="file.encoding" value="UTF-8"/>
+-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+-    <property name="localRepository" value="C:\Users\91857\.m2\repository"/>
+-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+-    <property name="java.io.tmpdir" value="C:\Users\91857\AppData\Local\Temp\"/>
+-    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+-    <property name="java.version" value="23"/>
+-    <property name="user.dir" value="D:\BeProjects\backend\CSLA"/>
+-    <property name="os.arch" value="amd64"/>
+-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+-    <property name="PID" value="2936"/>
+-    <property name="sun.os.patch.level" value=""/>
+-    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+-    <property name="native.encoding" value="Cp1252"/>
+-    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Users\91857\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\91857\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\91857\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\91857\AppData\Local\Programs\Python\Python313\;C:\Users\91857\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.2\bin;;C:\Program Files\Java\jdk-23\bin;C:\Program Files\apache-maven-3.9.9\bin;C:\Users\91857\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\91857\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3\bin;;C:\Users\91857\AppData\Roaming\npm;."/>
+-    <property name="java.vm.info" value="mixed mode, sharing"/>
+-    <property name="stderr.encoding" value="Cp1252"/>
+-    <property name="java.vendor" value="Oracle Corporation"/>
+-    <property name="java.vm.version" value="23+37-2369"/>
+-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+-    <property name="java.class.version" value="67.0"/>
+-    <property name="LOGGED_APPLICATION_NAME" value="[Auth-Services] "/>
+-  </properties>
+-  <testcase name="contextLoads" classname="com.CSLA.AuthServicesApplicationTests" time="0.386">
+-    <system-out><![CDATA[17:49:31.146 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.CSLA.AuthServicesApplicationTests]: AuthServicesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+-17:49:31.265 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.CSLA.AuthServicesApplication for test class com.CSLA.AuthServicesApplicationTests
+-
+-  .   ____          _            __ _ _
+- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+-  '  |____| .__|_| |_|_| |_\__, | / / / /
+- =========|_|==============|___/=/_/_/_/
+-
+- :: Spring Boot ::                (v3.4.0)
+-
+-2025-02-06T17:49:31.665+05:30  INFO 2936 --- [Auth-Services] [           main] com.CSLA.AuthServicesApplicationTests    : Starting AuthServicesApplicationTests using Java 23 with PID 2936 (started by 91857 in D:\BeProjects\backend\CSLA)
+-2025-02-06T17:49:31.666+05:30  INFO 2936 --- [Auth-Services] [           main] com.CSLA.AuthServicesApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+-2025-02-06T17:49:32.407+05:30  INFO 2936 --- [Auth-Services] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+-2025-02-06T17:49:32.467+05:30  INFO 2936 --- [Auth-Services] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+-2025-02-06T17:49:32.963+05:30  INFO 2936 --- [Auth-Services] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+-2025-02-06T17:49:33.026+05:30  INFO 2936 --- [Auth-Services] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+-2025-02-06T17:49:33.072+05:30  INFO 2936 --- [Auth-Services] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+-2025-02-06T17:49:33.381+05:30  INFO 2936 --- [Auth-Services] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+-2025-02-06T17:49:33.410+05:30  INFO 2936 --- [Auth-Services] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+-2025-02-06T17:49:33.716+05:30  INFO 2936 --- [Auth-Services] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@195498aa
+-2025-02-06T17:49:33.717+05:30  INFO 2936 --- [Auth-Services] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+-2025-02-06T17:49:33.756+05:30  WARN 2936 --- [Auth-Services] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+-2025-02-06T17:49:33.756+05:30  WARN 2936 --- [Auth-Services] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+-2025-02-06T17:49:33.772+05:30  INFO 2936 --- [Auth-Services] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+-	Database driver: undefined/unknown
+-	Database version: 8.0
+-	Autocommit mode: undefined/unknown
+-	Isolation level: undefined/unknown
+-	Minimum pool size: undefined/unknown
+-	Maximum pool size: undefined/unknown
+-2025-02-06T17:49:34.540+05:30  INFO 2936 --- [Auth-Services] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+-2025-02-06T17:49:34.582+05:30  INFO 2936 --- [Auth-Services] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+-2025-02-06T17:49:35.061+05:30  INFO 2936 --- [Auth-Services] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+-2025-02-06T17:49:35.062+05:30  WARN 2936 --- [Auth-Services] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+-2025-02-06T17:49:35.104+05:30  WARN 2936 --- [Auth-Services] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+-2025-02-06T17:49:35.778+05:30  INFO 2936 --- [Auth-Services] [           main] com.CSLA.AuthServicesApplicationTests    : Started AuthServicesApplicationTests in 4.392 seconds (process running for 5.29)
+-]]></system-out>
+-    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+-WARNING: A Java agent has been loaded dynamically (C:\Users\91857\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.10\byte-buddy-agent-1.15.10.jar)
+-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+-WARNING: Dynamic loading of agents will be disallowed by default in a future release
+-]]></system-err>
+-  </testcase>
+-</testsuite>
+\ No newline at end of file
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/target/classes/application.properties	(date 1739178641862)
+@@ -18,3 +18,6 @@
+ spring.servlet.multipart.max-request-size=10MB
+ file.upload-dir=D:/BeProjects/LegalDocuments/src/main/resources/static/documents
+ 
++razorpay.api.key=YOUR_RAZORPAY_API_KEY
++razorpay.api.secret=YOUR_RAZORPAY_API_SECRET
++razorpay.account.number=YOUR_RAZORPAY_ACCOUNT_NUMBER
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/.idea/workspace.xml	(date 1739179212589)
+@@ -5,10 +5,60 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e7e64dd6-e661-498b-9c6b-0a03df265aa2" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/AuthServicesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/AuthServicesApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/controller/LoanController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/entity/LoanApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/entity/LoanApplication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/entity/Users.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/entity/LoanApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/IFA/entity/LoanApplication.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/service/LoanService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/service/impl/LoanServiceImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/CSLA-0.0.1-SNAPSHOT.jar" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/CSLA-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/AuthServicesApplication.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/controller/AdminController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/controller/AuthController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/controller/LoanController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/controller_advice/GlobalExceptionHandler.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/entity/BankManager.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/entity/LoanApplication.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/entity/UploadDocs.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/entity/Users.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/enums/Roles.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/mapper/UserMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/model/request/UsersRequest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/model/response/UsersResponse$UsersResponseBuilder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/model/response/UsersResponse.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/repository/DocsRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/repository/LoanApplicationRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/repository/UsersRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/JWT/JwtFilter.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/JWT/JwtRequest$JwtRequestBuilder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/JWT/JwtRequest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/JWT/JwtResponse$JwtResponseBuilder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/JWT/JwtResponse.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/SecurityConfig.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/UserAuthenticationEntryPoint.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/service/AuthService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/service/UserDetails.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/security/service/UsersService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/DocsService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/LoanService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/UserService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/impl/DocsServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/impl/LoanServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/service/impl/UserServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-02-06T17-49-30_225.dumpstream" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.CSLA.AuthServicesApplicationTests.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.CSLA.AuthServicesApplicationTests.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CSLA/AuthServicesApplicationTests.class" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -63,6 +113,8 @@
+     "Maven.AuthServices [install].executor": "Run",
+     "Maven.CSLA [clean].executor": "Run",
+     "Maven.CSLA [install].executor": "Run",
++    "Maven.IFA [clean].executor": "Run",
++    "Maven.IFA [install].executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+     "git-widget-placeholder": "loanApplyAndKyc",
+@@ -75,6 +127,11 @@
+     "settings.editor.selected.configurable": "ml.llm.LLMConfigurable"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="CreateClassDialog.RecentsKey">
++      <recent name="com.IFA.service.impl" />
++    </key>
++  </component>
+   <component name="RunManager">
+     <configuration name="AuthServicesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1739178643767)
+@@ -1,29 +1,0 @@
+-com\CSLA\model\response\UsersResponse.class
+-com\CSLA\security\JWT\JwtResponse$JwtResponseBuilder.class
+-com\CSLA\controller_advice\GlobalExceptionHandler.class
+-com\CSLA\controller\AdminController.class
+-com\CSLA\entity\Users.class
+-com\CSLA\model\response\UsersResponse$UsersResponseBuilder.class
+-com\CSLA\repository\UsersRepository.class
+-com\CSLA\service\impl\UserServiceImpl.class
+-com\CSLA\security\JWT\JwtResponse.class
+-com\CSLA\service\impl\DocsServiceImpl.class
+-com\CSLA\security\JWT\JwtRequest$JwtRequestBuilder.class
+-com\CSLA\security\UserAuthenticationEntryPoint.class
+-com\CSLA\security\service\UsersService.class
+-com\CSLA\security\JWT\JwtFilter.class
+-com\CSLA\service\DocsService.class
+-com\CSLA\controller\UserController.class
+-com\CSLA\enums\Roles.class
+-com\CSLA\security\JWT\JwtRequest.class
+-com\CSLA\AuthServicesApplication.class
+-com\CSLA\service\UserService.class
+-com\CSLA\security\service\AuthService.class
+-com\CSLA\security\service\BhavanaCorpUserDetails.class
+-com\CSLA\repository\DocsRepository.class
+-com\CSLA\security\SecurityConfig.class
+-com\CSLA\controller\ManagerController.class
+-com\CSLA\entity\UploadDocs.class
+-com\CSLA\mapper\UserMapper.class
+-com\CSLA\controller\AuthController.class
+-com\CSLA\model\request\UsersRequest.class
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/.idea/compiler.xml	(date 1739174712101)
+@@ -9,7 +9,6 @@
+         <outputRelativeToContentRoot value="true" />
+         <processorPath useClasspath="false">
+           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+         </processorPath>
+         <module name="IFA" />
+       </profile>
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1739178642797)
+@@ -1,26 +1,33 @@
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\AuthServicesApplication.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\controller\AdminController.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\controller\AuthController.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\controller\ManagerController.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\controller\UserController.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\controller_advice\GlobalExceptionHandler.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\entity\UploadDocs.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\entity\Users.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\enums\Roles.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\mapper\UserMapper.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\model\request\UsersRequest.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\model\response\UsersResponse.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\repository\DocsRepository.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\repository\UsersRepository.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\JWT\JwtFilter.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\JWT\JwtRequest.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\JWT\JwtResponse.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\SecurityConfig.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\service\AuthService.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\service\BhavanaCorpUserDetails.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\service\UsersService.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\security\UserAuthenticationEntryPoint.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\service\DocsService.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\service\impl\DocsServiceImpl.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\service\impl\UserServiceImpl.java
+-D:\BeProjects\backend\CSLA\src\main\java\com\CSLA\service\UserService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\AuthServicesApplication.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\controller\AdminController.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\controller\AuthController.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\controller\LoanController.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\controller_advice\GlobalExceptionHandler.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\entity\BankManager.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\entity\LoanApplication.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\entity\UploadDocs.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\entity\Users.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\enums\Roles.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\mapper\UserMapper.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\model\request\UsersRequest.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\model\response\UsersResponse.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\repository\DocsRepository.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\repository\LoanApplicationRepository.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\repository\UsersRepository.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\JWT\JwtFilter.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\JWT\JwtRequest.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\JWT\JwtResponse.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\SecurityConfig.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\service\AuthService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\service\UserDetails.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\service\UsersService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\security\UserAuthenticationEntryPoint.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\DocsService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\impl\DocsServiceImpl.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\impl\LoanServiceImpl.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\impl\PaymentServiceImpl.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\impl\UserServiceImpl.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\LoanService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\PaymentService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\RazorpayPayoutService.java
++D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA\service\UserService.java
+Index: src/main/java/com/IFA/controller/LoanController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/IFA/controller/LoanController.java b/src/main/java/com/IFA/controller/LoanController.java
+--- a/src/main/java/com/IFA/controller/LoanController.java	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/java/com/IFA/controller/LoanController.java	(date 1739175028970)
+@@ -45,4 +45,11 @@
+                                      @RequestParam String kycStatus) {
+         return loanService.verifyKYC(id, managerId, aadhaarNumber, panNumber, kycStatus);
+     }
++    // New disbursement endpoint: after loan approval, user triggers disbursement.
++    @PutMapping("/disburse/{id}")
++    public LoanApplication disburseLoan(@PathVariable Long id,
++                                        @RequestParam Long userId,
++                                        @RequestParam String bankAccount) {
++        return loanService.disburseLoan(id, userId, bankAccount);
++    }
+ }
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/resources/application.properties	(date 1739178266556)
+@@ -18,3 +18,6 @@
+ spring.servlet.multipart.max-request-size=10MB
+ file.upload-dir=D:/BeProjects/LegalDocuments/src/main/resources/static/documents
+ 
++razorpay.api.key=YOUR_RAZORPAY_API_KEY
++razorpay.api.secret=YOUR_RAZORPAY_API_SECRET
++razorpay.account.number=YOUR_RAZORPAY_ACCOUNT_NUMBER
+\ No newline at end of file
+Index: src/main/java/com/IFA/service/LoanService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/IFA/service/LoanService.java b/src/main/java/com/IFA/service/LoanService.java
+--- a/src/main/java/com/IFA/service/LoanService.java	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/java/com/IFA/service/LoanService.java	(date 1739174920399)
+@@ -10,4 +10,5 @@
+     LoanApplication approveLoan(Long id, Long managerId, String comments);
+     List<LoanApplication> getAllLoanApplications();
+     LoanApplication verifyKYC(Long id, Long managerId, String aadhaarNumber, String panNumber, String kycStatus);
++    LoanApplication disburseLoan(Long id, Long userId, String bankAccount);
+ }
+Index: src/main/java/com/IFA/service/impl/LoanServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/IFA/service/impl/LoanServiceImpl.java b/src/main/java/com/IFA/service/impl/LoanServiceImpl.java
+--- a/src/main/java/com/IFA/service/impl/LoanServiceImpl.java	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/java/com/IFA/service/impl/LoanServiceImpl.java	(date 1739178604725)
+@@ -5,6 +5,7 @@
+ import com.IFA.repository.LoanApplicationRepository;
+ import com.IFA.repository.UsersRepository;
+ import com.IFA.service.LoanService;
++import com.IFA.service.PaymentService;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
+ 
+@@ -21,6 +22,9 @@
+     @Autowired
+     private UsersRepository usersRepository;
+ 
++    @Autowired
++    private PaymentService paymentService;
++
+     @Override
+     public LoanApplication applyForLoan(LoanApplication loanApplication) {
+         loanApplication.setApplicationStatus("Pending");
+@@ -40,10 +44,10 @@
+ 
+         if (optionalLoan.isPresent() && managerUser.isPresent()) {
+             LoanApplication loan = optionalLoan.get();
+-            // Check if KYC has been approved
+             if (!"Approved".equalsIgnoreCase(loan.getKycStatus())) {
+                 throw new RuntimeException("Loan cannot be approved without KYC approval.");
+             }
++            // Ensure that the manager who verified KYC is the one approving the loan.
+             if (loan.getKycVerifiedBy() == null || loan.getKycVerifiedBy().getId() != managerId.intValue()) {
+                 throw new RuntimeException("Only the manager who verified the KYC can approve the loan.");
+             }
+@@ -76,4 +80,26 @@
+         }
+         return null;
+     }
++    @Override
++    public LoanApplication disburseLoan(Long id, Long userId, String bankAccount) {
++        Optional<LoanApplication> optionalLoan = loanRepository.findById(id);
++        if (!optionalLoan.isPresent()) {
++            throw new RuntimeException("Loan not found.");
++        }
++        LoanApplication loan = optionalLoan.get();
++        if (!"Approved".equalsIgnoreCase(loan.getApplicationStatus())) {
++            throw new RuntimeException("Loan must be approved before disbursement.");
++        }
++        if (loan.getDisbursementDate() != null) {
++            throw new RuntimeException("Loan has already been disbursed.");
++        }
++        boolean disbursed = paymentService.disburseLoanAmount(loan, bankAccount);
++        if (!disbursed) {
++            throw new RuntimeException("Payment disbursement failed.");
++        }
++        loan.setApplicationStatus("Disbursed");
++        loan.setDisbursementDate(new Date());
++        loan.setDisbursementStatus("Disbursed");
++        return loanRepository.save(loan);
++    }
+ }
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/pom.xml	(date 1739178246882)
+@@ -1,6 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
++         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 	<modelVersion>4.0.0</modelVersion>
+ 	<parent>
+ 		<groupId>org.springframework.boot</groupId>
+@@ -12,25 +14,13 @@
+ 	<artifactId>IFA</artifactId>
+ 	<version>0.0.1-SNAPSHOT</version>
+ 	<name>IFA</name>
+-	<description>Integration-financial-Application</description>
+-	<url/>
+-	<licenses>
+-		<license/>
+-	</licenses>
+-	<developers>
+-		<developer/>
+-	</developers>
+-	<scm>
+-		<connection/>
+-		<developerConnection/>
+-		<tag/>
+-		<url/>
+-	</scm>
++	<description>Integration Financial Application</description>
+ 	<properties>
+ 		<java.version>17</java.version>
+ 		<spring-cloud.version>2024.0.0</spring-cloud.version>
+ 	</properties>
+ 	<dependencies>
++		<!-- Spring Boot Starters -->
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+@@ -41,44 +31,61 @@
+ 		</dependency>
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-validation</artifactId>
++			<artifactId>spring-boot-starter-web</artifactId>
++		</dependency>
++		<dependency>
++			<groupId>org.springframework</groupId>
++			<artifactId>spring-web</artifactId>
++			<version>5.3.26</version>
+ 		</dependency>
++
++		<!-- Razorpay Java SDK (if any payout functionality exists) -->
++		<!-- (We use a custom integration via RestTemplate below) -->
+ 		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-web</artifactId>
++			<groupId>com.razorpay</groupId>
++			<artifactId>razorpay-java</artifactId>
++			<version>1.4.3</version>
++		</dependency>
++
++		<!-- Jackson for JSON processing -->
++		<dependency>
++			<groupId>com.fasterxml.jackson.core</groupId>
++			<artifactId>jackson-databind</artifactId>
++			<version>2.15.0</version>
+ 		</dependency>
++
++		<!-- MySQL Connector -->
+ 		<dependency>
+ 			<groupId>com.mysql</groupId>
+ 			<artifactId>mysql-connector-j</artifactId>
+ 			<scope>runtime</scope>
+ 		</dependency>
+-		<dependency>
+-			<groupId>org.apache.pdfbox</groupId>
+-			<artifactId>pdfbox</artifactId>
+-			<version>2.0.29</version>
+-		</dependency>
++
++		<!-- Lombok for boilerplate reduction -->
+ 		<dependency>
+ 			<groupId>org.projectlombok</groupId>
+ 			<artifactId>lombok</artifactId>
+ 			<optional>true</optional>
+ 		</dependency>
++
++		<!-- JSON Web Token dependencies (if required elsewhere) -->
+ 		<dependency>
+ 			<groupId>io.jsonwebtoken</groupId>
+ 			<artifactId>jjwt-api</artifactId>
+ 			<version>0.11.5</version>
+ 		</dependency>
+-
+ 		<dependency>
+ 			<groupId>io.jsonwebtoken</groupId>
+ 			<artifactId>jjwt-impl</artifactId>
+ 			<version>0.11.5</version>
+ 		</dependency>
+-
+ 		<dependency>
+ 			<groupId>io.jsonwebtoken</groupId>
+ 			<artifactId>jjwt-jackson</artifactId>
+ 			<version>0.11.5</version>
+ 		</dependency>
++
++		<!-- Spring Boot Test -->
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-test</artifactId>
+@@ -92,6 +99,7 @@
+ 	</dependencies>
+ 	<build>
+ 		<plugins>
++			<!-- Compiler Plugin for Lombok -->
+ 			<plugin>
+ 				<groupId>org.apache.maven.plugins</groupId>
+ 				<artifactId>maven-compiler-plugin</artifactId>
+@@ -107,16 +115,7 @@
+ 			<plugin>
+ 				<groupId>org.springframework.boot</groupId>
+ 				<artifactId>spring-boot-maven-plugin</artifactId>
+-				<configuration>
+-					<excludes>
+-						<exclude>
+-							<groupId>org.projectlombok</groupId>
+-							<artifactId>lombok</artifactId>
+-						</exclude>
+-					</excludes>
+-				</configuration>
+ 			</plugin>
+ 		</plugins>
+ 	</build>
+-
+ </project>
+Index: src/main/java/com/IFA/AuthServicesApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/IFA/AuthServicesApplication.java b/src/main/java/com/IFA/AuthServicesApplication.java
+--- a/src/main/java/com/IFA/AuthServicesApplication.java	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/java/com/IFA/AuthServicesApplication.java	(date 1739178411895)
+@@ -4,7 +4,7 @@
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
+ 
+ 
+-@SpringBootApplication
++@SpringBootApplication(scanBasePackages = "com.IFA")
+ public class AuthServicesApplication {
+ 
+ 	public static void main(String[] args) {
+Index: src/main/java/com/IFA/entity/LoanApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/IFA/entity/LoanApplication.java b/src/main/java/com/IFA/entity/LoanApplication.java
+--- a/src/main/java/com/IFA/entity/LoanApplication.java	(revision 39ce71d5f78ddd80a803270f5e36903bee105a43)
++++ b/src/main/java/com/IFA/entity/LoanApplication.java	(date 1739178570135)
+@@ -22,16 +22,15 @@
+     private Integer loanTenure;
+     private Double interestRate;
+     private String purposeOfLoan;
+-
+     private String employmentType;
+     private Double annualIncome;
+     private String companyName;
+     private Integer workExperience;
+ 
+-    private String applicationStatus; // Pending, Under Review, Approved, Rejected
++    private String applicationStatus; // e.g., Pending, Approved, Disbursed
+     private String reviewComments;
+     private Date approvalDate;
+-    private String kycStatus; // Pending, Verified, Rejected
++    private String kycStatus; // e.g., Pending, Approved, Rejected
+     private String aadhaarNumber;
+     private String panNumber;
+ 
+@@ -43,6 +42,10 @@
+     @JoinColumn(name = "approved_by")
+     private Users approvedBy;
+ 
++    // Fields for disbursement
++    private Date disbursementDate;
++    private String disbursementStatus; // e.g., "Not Disbursed", "Disbursed"
++
+     @Column(name = "createdOn")
+     private Date createdOn;
+ 
+diff --git a/target/classes/com/IFA/controller/AdminController.class b/target/classes/com/IFA/controller/AdminController.class
+deleted file mode 100644
+index 9180d88ee9cb5a6bda4f5dcad47bcb5ef3ca5fbd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/controller/AuthController.class b/target/classes/com/IFA/controller/AuthController.class
+deleted file mode 100644
+index c11c2927c10ae16b4aa739071a9a01873c1756d2..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/controller/LoanController.class b/target/classes/com/IFA/controller/LoanController.class
+deleted file mode 100644
+index 5324623bba89f7a19c4cb7e2b21d115ad8457e3d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/controller_advice/GlobalExceptionHandler.class b/target/classes/com/IFA/controller_advice/GlobalExceptionHandler.class
+deleted file mode 100644
+index 226c8a2059fe8c658540b0c98c01b98befb8a7e2..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/entity/BankManager.class b/target/classes/com/IFA/entity/BankManager.class
+deleted file mode 100644
+index 7bbad859680d4ea1a103acea711ae60a2a7adb6c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/entity/LoanApplication.class b/target/classes/com/IFA/entity/LoanApplication.class
+deleted file mode 100644
+index 8125f034d10b3179ba42e05d6b7c22c500b051ac..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/entity/UploadDocs.class b/target/classes/com/IFA/entity/UploadDocs.class
+deleted file mode 100644
+index a0941b3c2f7a8a051377c304bc56a17c9c9d7329..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/entity/Users.class b/target/classes/com/IFA/entity/Users.class
+deleted file mode 100644
+index 54f453f501f710ba11f8a5b065676ddeb5c33c82..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/enums/Roles.class b/target/classes/com/IFA/enums/Roles.class
+deleted file mode 100644
+index e3d357ea40786c81d4db4538ceeb56c904e1d410..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/mapper/UserMapper.class b/target/classes/com/IFA/mapper/UserMapper.class
+deleted file mode 100644
+index 384dc40e097bff32ed6455024478e8672702cbd5..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/model/request/UsersRequest.class b/target/classes/com/IFA/model/request/UsersRequest.class
+deleted file mode 100644
+index 950bc1165e7b0733fe367415077e9f7fd8c8e79d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/model/response/UsersResponse$UsersResponseBuilder.class b/target/classes/com/IFA/model/response/UsersResponse$UsersResponseBuilder.class
+deleted file mode 100644
+index 4b389ed369b00150b205f7a18a86c603d8fd2a86..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/model/response/UsersResponse.class b/target/classes/com/IFA/model/response/UsersResponse.class
+deleted file mode 100644
+index 137542d379eb9dcf69fe83bec80ef5039a539102..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/repository/DocsRepository.class b/target/classes/com/IFA/repository/DocsRepository.class
+deleted file mode 100644
+index c918cbe04677ba3ef6f08026096d9c0e9fee0fd3..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/repository/LoanApplicationRepository.class b/target/classes/com/IFA/repository/LoanApplicationRepository.class
+deleted file mode 100644
+index f6b75160e3a45ad6d66b64bf11599c233d4e9cfe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/repository/UsersRepository.class b/target/classes/com/IFA/repository/UsersRepository.class
+deleted file mode 100644
+index a506491acf3ad209ca1bd241b70941af4f96641b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/JWT/JwtFilter.class b/target/classes/com/IFA/security/JWT/JwtFilter.class
+deleted file mode 100644
+index d007752529d9ae713a5fc841b544c5f8e5074e6d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/JWT/JwtRequest$JwtRequestBuilder.class b/target/classes/com/IFA/security/JWT/JwtRequest$JwtRequestBuilder.class
+deleted file mode 100644
+index 3febf305ce0263bd7f6f57585ea45eaf40b71cf1..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/JWT/JwtRequest.class b/target/classes/com/IFA/security/JWT/JwtRequest.class
+deleted file mode 100644
+index 47f140a39556271e80ab88b1363417a20de036dd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/JWT/JwtResponse$JwtResponseBuilder.class b/target/classes/com/IFA/security/JWT/JwtResponse$JwtResponseBuilder.class
+deleted file mode 100644
+index 0aa4ae1eb5707b1d8f85acb7ab457a3969f7cab1..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/JWT/JwtResponse.class b/target/classes/com/IFA/security/JWT/JwtResponse.class
+deleted file mode 100644
+index c63d2680a90b06a2ffbebf8a30dd6fa399655de8..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/service/AuthService.class b/target/classes/com/IFA/security/service/AuthService.class
+deleted file mode 100644
+index 681f04197aee2b951f70faa6e30f640d50053ce9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/service/UserDetails.class b/target/classes/com/IFA/security/service/UserDetails.class
+deleted file mode 100644
+index f2fba70a5868d0f4410f458c00f6be18e64cf4c7..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/service/UsersService.class b/target/classes/com/IFA/security/service/UsersService.class
+deleted file mode 100644
+index 81be68d04c36c02e41dfd51733208fcfc0f97502..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/SecurityConfig.class b/target/classes/com/IFA/security/SecurityConfig.class
+deleted file mode 100644
+index dd8169d115921ec8c48dba818889890aceaf26a3..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/security/UserAuthenticationEntryPoint.class b/target/classes/com/IFA/security/UserAuthenticationEntryPoint.class
+deleted file mode 100644
+index e0799075af29f6a6c842094ecd894e6699f23979..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/impl/DocsServiceImpl.class b/target/classes/com/IFA/service/impl/DocsServiceImpl.class
+deleted file mode 100644
+index 7abeb8418d7e16893d56055875c1fd364b31f623..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/impl/LoanServiceImpl.class b/target/classes/com/IFA/service/impl/LoanServiceImpl.class
+deleted file mode 100644
+index 169254f60dcfe68de9aab6cf01842f582399c880..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/impl/UserServiceImpl.class b/target/classes/com/IFA/service/impl/UserServiceImpl.class
+deleted file mode 100644
+index 95b382c663d0d708dc3e2e984a11a8e05786e458..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/DocsService.class b/target/classes/com/IFA/service/DocsService.class
+deleted file mode 100644
+index 9fbb962ea3e019aa3526ebb82661ae407ad8e540..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/LoanService.class b/target/classes/com/IFA/service/LoanService.class
+deleted file mode 100644
+index 4e81103fab59d34b78acb91c2108dd2280564741..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/service/UserService.class b/target/classes/com/IFA/service/UserService.class
+deleted file mode 100644
+index 02c94f7416665ef877a60f24871b4577f5b530fd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/classes/com/IFA/AuthServicesApplication.class b/target/classes/com/IFA/AuthServicesApplication.class
+deleted file mode 100644
+index 1cc1f043fd485be53789533c113e3367c221d775..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+deleted file mode 100644
+index 32f477c53207b446452aab37dd078c393913e114..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+deleted file mode 100644
+index 1645065db09fe285666a579c50837f4a9ce97f9a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/surefire-reports/2025-02-06T17-49-30_225.dumpstream b/target/surefire-reports/2025-02-06T17-49-30_225.dumpstream
+deleted file mode 100644
+index ae6a487b43a38adc0b69a25444b817362efb453a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/test-classes/com/CSLA/AuthServicesApplicationTests.class b/target/test-classes/com/CSLA/AuthServicesApplicationTests.class
+deleted file mode 100644
+index 4afc68df97f663f6548ea2a064f4427019ec9dc9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/CSLA-0.0.1-SNAPSHOT.jar b/target/CSLA-0.0.1-SNAPSHOT.jar
+deleted file mode 100644
+index 2548a67259d42f4f473fe3c92605007e3c753436..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/target/CSLA-0.0.1-SNAPSHOT.jar.original b/target/CSLA-0.0.1-SNAPSHOT.jar.original
+deleted file mode 100644
+index cac71323199cecbf1eb6366a6b095b1cc15c911c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+

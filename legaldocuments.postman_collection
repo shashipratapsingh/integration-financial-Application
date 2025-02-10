@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "0598d09b-fbe3-43e4-8c0f-ee5418d8f92d",
-		"name": "CSLA",
+		"_postman_id": "b60fc353-dfe7-4c5c-8dab-201141b3abec",
+		"name": "Integration-financial-Application",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30398232"
 	},
@@ -217,7 +217,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJBZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4NTA1OTMsImV4cCI6MTczODg1NDE5M30.-jgIL5Lru4UZeFvN9-whoJ5GN-MjU5dR4djoapxn53o",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJBZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg5MTM5OTAsImV4cCI6MTczODkxNzU5MH0.rOvhjGan5Dgg-1oauzNNSK_EGIHMYXU-1r0-OQ41B9o",
 									"type": "string"
 								}
 							]
@@ -250,17 +250,158 @@
 			]
 		},
 		{
-			"name": "Manager DashBoard",
+			"name": "Loan",
 			"item": [
 				{
-					"name": "Manager Dashboard",
+					"name": "Apply for Loan",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsInN1YiI6Ik1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzM4ODQwOTAxLCJleHAiOjE3Mzg4NDQ1MDF9.oBBPNxSoSixbdf0RFAZhGsdjgCFptfG1ATVGOWZHMrk",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InVzZXJAZ21haWwuY29tIiwiaWF0IjoxNzM5MTcyMDkwLCJleHAiOjE3MzkxNzU2OTB9.9AD-zeQ17L6OCcNqqyxC1LN0-ZeQbsfF4WZEBJsTkek",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Ravi singh\",\r\n    \"dateOfBirth\": \"1999-08-07\",\r\n    \"address\": \"Noida 15\",\r\n    \"contactNumber\": \"8577951142\",\r\n    \"email\": \"ravi@gmail.com.com\",\r\n    \"loanAmount\": 2000000,\r\n    \"loanType\": \"Personal\",\r\n    \"loanTenure\": 24,\r\n    \"interestRate\": 5.5,\r\n    \"purposeOfLoan\": \"Home Renovation\",\r\n    \"employmentType\": \"Salaried\",\r\n    \"annualIncome\": 50000,\r\n    \"companyName\": \"ABC Corp\",\r\n    \"workExperience\": 5,\r\n    \"aadhaarNumber\": \"857785114212\",\r\n    \"panNumber\": \"WERDT0907E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/loans/apply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"loans",
+								"apply"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/loans/apply\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"fullName\": \"John Doe\",\r\n    \"dateOfBirth\": \"1985-01-01\",\r\n    \"address\": \"1234 Elm St\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"loanAmount\": 100000,\r\n    \"loanType\": \"Personal\",\r\n    \"loanTenure\": 24,\r\n    \"interestRate\": 5.5,\r\n    \"purposeOfLoan\": \"Home Renovation\",\r\n    \"employmentType\": \"Salaried\",\r\n    \"annualIncome\": 50000,\r\n    \"companyName\": \"ABC Corp\",\r\n    \"workExperience\": 5\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "KYC Verification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InVzZXJAZ21haWwuY29tIiwiaWF0IjoxNzM5MTcxNDY1LCJleHAiOjE3MzkxNzUwNjV9.3hn5-J5HTKofShw0Oms1RSRiHsMvfvYyCimjEK-UYB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/loans/kyc/verify/1?aadhaarNumber=857785114212&panNumber=WERDT0907E&kycStatus=Approved&managerId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"loans",
+								"kyc",
+								"verify",
+								"1"
+							],
+							"query": [
+								{
+									"key": "aadhaarNumber",
+									"value": "857785114212"
+								},
+								{
+									"key": "panNumber",
+									"value": "WERDT0907E"
+								},
+								{
+									"key": "kycStatus",
+									"value": "Approved"
+								},
+								{
+									"key": "managerId",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8084/api/loans/kyc/verify/4?aadhaarNumber=857785114212&panNumber=WERDT0907E&kycStatus=Approved&managerId=2\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "approved Loan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InVzZXJAZ21haWwuY29tIiwiaWF0IjoxNzM5MTcxNDY1LCJleHAiOjE3MzkxNzUwNjV9.3hn5-J5HTKofShw0Oms1RSRiHsMvfvYyCimjEK-UYB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/loans/approve/1?managerId=2&comments=Loan%20Approved%20Successfully",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"loans",
+								"approve",
+								"1"
+							],
+							"query": [
+								{
+									"key": "managerId",
+									"value": "2"
+								},
+								{
+									"key": "comments",
+									"value": "Loan%20Approved%20Successfully"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8084/api/loans/approve/4?adminId=1&comments=Loan%20Approved%20Successfully\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All Loan List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MzkxNjkyODgsImV4cCI6MTczOTE3Mjg4OH0.VZKZfEk3qzBxKxUqanMy7SifbtNVsVgGcHre1LrhBiU",
 									"type": "string"
 								}
 							]
@@ -268,196 +409,82 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/manager/dashboard",
+							"raw": "http://localhost:8084/api/loans/all/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8084",
 							"path": [
-								"manager",
-								"dashboard"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8084/manager/",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTWFuYWdlciIsInN1YiI6Im1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzM4NzYzNjY3LCJleHAiOjE3Mzg3NjcyNjd9.ASq36QqoxYEp8v1OXxiHOdsp0pQ5hNli0ZnO9w14ww4"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/octet-stream",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "managerProfile",
-									"value": "{\"managerName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"}",
-									"contentType": "application/json",
-									"type": "text"
-								},
-								{
-									"key": "aadharCardFile",
-									"contentType": "application/json",
-									"type": "file",
-									"src": "WhatsApp1.jpeg"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8084/manager/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8084",
-							"path": [
-								"manager",
+								"api",
+								"loans",
+								"all",
 								""
 							]
 						},
-						"description": "Generated from cURL: curl --location 'http://localhost:8084/manager/' \\\r\n--header 'Authorization: Bearer YOUR_JWT_TOKEN' \\\r\n--form 'managerProfile={\"managerName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"}' \\\r\n--form 'aadharCardFile=@\"path/to/WhatsA1.jpeg\"'\r\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Manager profile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJzaGFzaGlAZ21haWwuY29tIiwiaWF0IjoxNzM4ODMxMTY2LCJleHAiOjE3Mzg4MzQ3NjZ9.6we59ZfF1mBY4fVj8bFuqCGhfGpPqDx8MsvxMmTuol4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "candidateDetails",
-									"value": "{\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"223456789012\",\"panCardNumber\":\"BBCDE1234F\"}",
-									"contentType": "application/json",
-									"type": "text"
-								},
-								{
-									"key": "aadharCardFile",
-									"contentType": "application/json",
-									"type": "file",
-									"src": "img-worlds-of-adventure.jpg"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8084/user/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8084",
-							"path": [
-								"user",
-								""
-							]
-						}
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8084/api/loans/approve/4?adminId=1&comments=Loan%20Approved%20Successfully\"\r\n"
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "User Dashboard",
+			"name": "Manager DashBoard",
 			"item": [
 				{
-					"name": "User DashBoard",
+					"name": "Add Manager",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVXNlciIsInN1YiI6InNhY2hpbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg4MzM5MjMsImV4cCI6MTczODgzNzUyM30.NxYgq9_O0De2b7rAtW3PopyDnnIntUiDwty1Lht5OrI",
-									"type": "string"
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Alice Johnson\",\r\n  \"email\": \"alice.johnson@bank.com\",\r\n  \"contactNumber\": \"9876543210\",\r\n  \"designation\": \"Manager\",\r\n  \"department\": \"Loans\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"method": "GET",
-						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/user/profile",
+							"raw": "http://localhost:8084/api/managers/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8084",
 							"path": [
-								"user",
-								"profile"
+								"api",
+								"managers",
+								"register"
 							]
-						}
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8084/api/managers/register \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"fullName\": \"Alice Johnson\",\r\n  \"email\": \"alice.johnson@bank.com\",\r\n  \"contactNumber\": \"9876543210\",\r\n  \"designation\": \"Senior Bank Manager\",\r\n  \"department\": \"Loans\"\r\n}'\r\n"
 					},
 					"response": []
 				},
 				{
-					"name": "User Profile",
+					"name": "Manager Get BY Id",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQWRtaW4iLCJzdWIiOiJzaGFzaGlAZ21haWwuY29tIiwiaWF0IjoxNzM4ODMwNDczLCJleHAiOjE3Mzg4MzQwNzN9.aZvMUWGIZOlbi0Jp9eMj6k1yMWjsHjsv7eOd2ZK54Ps",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "candidateDetails",
-									"value": "{\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"623456789012\",\"panCardNumber\":\"FBCDE1234F\"}",
-									"contentType": "application/json",
-									"type": "text"
-								},
-								{
-									"key": "aadharCardFile",
-									"contentType": "application/json",
-									"type": "file",
-									"src": "WhatsApp Image 2025-02-04 at 18.26.01.jpeg"
-								}
-							]
-						},
 						"url": {
-							"raw": "http://localhost:8084/user/",
+							"raw": "http://localhost:8084/api/managers/{id}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8084",
 							"path": [
-								"user",
-								""
+								"api",
+								"managers",
+								"{id}"
 							]
-						},
-						"description": "Generated from cURL: curl -X POST -H \"Content-Type: multipart/form-data\" \\\r\n  -F 'candidateDetails={\"candidateName\":\"John Doe\",\"fatherName\":\"Robert Doe\",\"motherName\":\"Jane Doe\",\"dob\":\"1990-01-01\",\"address\":\"123 Main St\",\"aadharCardNumber\":\"123456789012\",\"panCardNumber\":\"ABCDE1234F\"};type=application/json' \\\r\n  -F 'uploadAadharCard=@/path/to/aadhar_card.pdf;type=application/pdf' \\\r\n  http://localhost:8080/user/\r\n"
+						}
 					},
 					"response": []
 				}
@@ -473,7 +500,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"shashi@gmail.com\",\r\n\r\n    \"password\":\"1234\",\r\n    \"roles\":\"Admin\"\r\n}",
+					"raw": "{\r\n    \"name\":\"manager\",\r\n    \"email\":\"manager@gmail.com\",\r\n\r\n    \"password\":\"1234\",\r\n    \"roles\":\"Manager\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -502,7 +529,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"Admin@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"raw": "{\r\n    \"email\":\"manager@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
