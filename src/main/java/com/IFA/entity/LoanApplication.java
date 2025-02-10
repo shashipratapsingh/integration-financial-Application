@@ -43,19 +43,19 @@ public class LoanApplication {
     @JoinColumn(name = "approved_by")
     private Users approvedBy;
 
-    @Column(name = "createdBy")
-    private Date createdBy;
+    @Column(name = "createdOn")
+    private Date createdOn;
 
-    @Column(name = "updatedBy")
-    private Date updatedBy;
+    @Column(name = "updatedOn")
+    private Date updatedOn;
 
     @PrePersist
     protected void onCreate() {
-        createdBy = new Date();
+        createdOn = new Date();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedBy = new Date();
+        updatedOn = new Date();
     }
 }
