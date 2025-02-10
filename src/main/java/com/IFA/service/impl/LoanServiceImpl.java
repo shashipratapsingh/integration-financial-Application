@@ -34,14 +34,21 @@ public class LoanServiceImpl implements LoanService {
     }
 
     @Override
-    public LoanApplication approveLoan(Long id, Long adminId, String comments) {
+    public LoanApplication approveLoan(Long id, Long managerId, String comments) {
         Optional<LoanApplication> optionalLoan = loanRepository.findById(id);
-        Optional<Users> adminUser = usersRepository.findById(Math.toIntExact(adminId));
+        Optional<Users> managerUser = usersRepository.findById(Math.toIntExact(managerId));
 
-        if (optionalLoan.isPresent() && adminUser.isPresent()) {
+        if (optionalLoan.isPresent() && managerUser.isPresent()) {
             LoanApplication loan = optionalLoan.get();
+            // Check if KYC has been approved
+            if (!"Approved".equalsIgnoreCase(loan.getKycStatus())) {
+                throw new RuntimeException("Loan cannot be approved without KYC approval.");
+            }
+            if (loan.getKycVerifiedBy() == null || loan.getKycVerifiedBy().getId() != managerId.intValue()) {
+                throw new RuntimeException("Only the manager who verified the KYC can approve the loan.");
+            }
             loan.setApplicationStatus("Approved");
-            loan.setApprovedBy(adminUser.get());
+            loan.setApprovedBy(managerUser.get());
             loan.setReviewComments(comments);
             loan.setApprovalDate(new Date());
             return loanRepository.save(loan);
