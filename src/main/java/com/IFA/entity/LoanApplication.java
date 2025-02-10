@@ -29,13 +29,19 @@ public class LoanApplication {
     private Integer workExperience;
 
     private String applicationStatus; // Pending, Under Review, Approved, Rejected
-    private Long bankManagerId;
-    private Long adminId;
     private String reviewComments;
     private Date approvalDate;
     private String kycStatus; // Pending, Verified, Rejected
     private String aadhaarNumber;
     private String panNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "kyc_verified_by")
+    private Users kycVerifiedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "approved_by")
+    private Users approvedBy;
 
     @Column(name = "createdBy")
     private Date createdBy;
@@ -53,4 +59,3 @@ public class LoanApplication {
         updatedBy = new Date();
     }
 }
-

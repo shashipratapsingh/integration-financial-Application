@@ -36,7 +36,7 @@ public class LoanController {
     }
 
     @PostMapping("/kyc/verify/{id}")
-    public LoanApplication verifyKYC(@PathVariable Long id, @RequestParam String aadhaarNumber, @RequestParam String panNumber, @RequestParam String kycStatus) {
-        return loanService.verifyKYC(id, aadhaarNumber, panNumber, kycStatus);
+    public LoanApplication verifyKYC(@PathVariable Long id, @RequestParam Long managerId, @RequestParam String aadhaarNumber, @RequestParam String panNumber, @RequestParam String kycStatus) {
+        return loanService.verifyKYC(id, managerId, aadhaarNumber, panNumber, kycStatus);
     }
 }
