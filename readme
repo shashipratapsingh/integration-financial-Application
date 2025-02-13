@@ -1,0 +1,67 @@
+https://www.youtube.com/watch?v=pMR_48AF-A0&list=PL_6klLfS1WqG8mRCW5a-bIViq1DbzQkp9
+---------------------------------------------------------Open Account -----------------------------------------------------
+
+1. new Account opening (Application number should be auto generate )
+	(page 1: personal details) 
+		{name ,mobile number(unique), father name , dob, Gender , email,marital status, Address ,city , pin code , state }
+	(page 2: additional details)
+		{religion, category , income, educational details , occupation, pan number , Aadhaar number ,  senior  citizen  , existing account (true or false)}
+	(page 3: account details)
+		account type : {saving account , fixed deposit account , current Account , recurring deposit account}
+		Account number(16 digit number)(auto generate by system default pin)(should unique)
+		pin(4 digit numeric)(auto generate by system default pin)
+		cvv number (3 digit numeric)(auto generate by system)
+		card number(16 digit numeric for ATM card)(auto generate by system)
+		transactions id : should be auto generate and unique(combination of numbers and alphabets)
+		service requirement (check boxes){ATM card, internet banking , mobile banking , email alter, cheque book, e-statements}
+		
+	(page 4: Deposit opening fees)
+		Enter opening fees amount.
+		
+
+	check box: (I hereby declares that above entered corrects to best to the my knowledge)
+
+
+	-> after submit the all details account number ,card number and pin should be generate automatic by the system.
+
+2. check balance(means balance enquiry).
+3. Deposit(if I am entering any amount means it should be add in the existing balance).
+4. Cash withdrawal(transaction in other accounts meaning if I am entering any amount means it should be minus given account to total balance and individual balance as well).
+
+5. all transactions of Account holder(means deposit , withdrawal  ).
+5. mini statements of Account holder{meaning }(between given days like 15 days, 30 days , 6 months , all statements).
+6.pin change
+
+-------------------------------------------------------- Loan apply---------------------------------------------------------------------
+
+1. apply loan {}
+		name , dob , address , contact number , email , loanAmount, loanType , loanTenure, intrestRate , porposeType , annualIncome, companyName, workExpirence, aadhaarNumber,panNumber
+
+2. Loan status .
+
+3. Kyc  of loan.
+
+4. All loan list. 
+
+5. Approve Loan.
+
+6. disbursements of approved loan.
+
+7. EMI per month of loan amount.
+
+
+------------------------------------------------------FD (Fixed Deposit) --------------------------------------------------------------------
+FD is some amount for some Tenure(limited time) and interest wil be calculate 8%/ year and will add calculated amount in the FD account.
+amount should be deduct to total balance.
+1. Apply for FD
+{ Name , Age , FD Account ,  Tenure , Account number  }
+
+
+
+
+
+
+	
+
+
+	
