@@ -1,4 +1,4 @@
-package com.IFA.controller_advice;
+package com.IFA.exceptionHandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
