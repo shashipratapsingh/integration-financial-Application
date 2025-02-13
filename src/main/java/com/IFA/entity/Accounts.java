@@ -67,6 +67,6 @@ public class Accounts {
         this.cardNumber = String.format("%016d", (long) (Math.random() * Math.pow(10, 16)));
         this.pin = String.format("%04d", (int) (Math.random() * 10000));
         this.cvv = String.format("%03d", (int) (Math.random() * 1000));
-        this.balance = 0.0;  // Initial balance
+        this.balance = 0.0;
     }
 }
