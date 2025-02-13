@@ -1,7 +1,9 @@
 package com.IFA.service.impl;
 
 import com.IFA.entity.Accounts;
+import com.IFA.entity.CompanyProfile;
 import com.IFA.repository.AccountRepository;
+import com.IFA.repository.CompanyProfileRepository;
 import com.IFA.service.AccountService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,9 +14,11 @@ import java.util.Optional;
 public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
+    private final CompanyProfileRepository companyProfileRepository;
 
-    public AccountServiceImpl(AccountRepository accountRepository) {
+    public AccountServiceImpl(AccountRepository accountRepository, CompanyProfileRepository companyProfileRepository) {
         this.accountRepository = accountRepository;
+        this.companyProfileRepository = companyProfileRepository;
     }
 
     public Accounts createNewAccount(Accounts account) {
@@ -35,8 +39,15 @@ public class AccountServiceImpl implements AccountService {
     public Accounts depositAmount(String accountNumber, double amount) {
         Accounts account = accountRepository.findByAccountNumber(accountNumber)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        // Update account balance
         account.setBalance(account.getBalance() + amount);
-        return accountRepository.save(account);
+        accountRepository.save(account);
+
+        // Update CompanyProfile balanceSheet
+        updateCompanyBalance(amount, true); // True for deposit
+
+        return account;
     }
 
     @Transactional
@@ -48,7 +59,26 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("Insufficient balance");
         }
 
+        // Update account balance
         account.setBalance(account.getBalance() - amount);
-        return accountRepository.save(account);
+        accountRepository.save(account);
+
+        // Update CompanyProfile balanceSheet
+        updateCompanyBalance(amount, false); // False for withdrawal
+
+        return account;
+    }
+
+    private void updateCompanyBalance(double amount, boolean isDeposit) {
+        // Assuming there's only one company profile
+        CompanyProfile companyProfile = companyProfileRepository.findAll().stream().findFirst()
+                .orElseThrow(() -> new RuntimeException("Company profile not found"));
+
+        // Update balanceSheet based on deposit or withdrawal
+        double updatedBalanceSheet = isDeposit ? companyProfile.getBalanceSheet() + amount
+                : companyProfile.getBalanceSheet() - amount;
+
+        companyProfile.setBalanceSheet(updatedBalanceSheet);
+        companyProfileRepository.save(companyProfile);
     }
 }
