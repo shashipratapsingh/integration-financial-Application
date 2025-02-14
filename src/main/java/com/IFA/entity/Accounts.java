@@ -59,6 +59,7 @@ public class Accounts {
     private AccountType accountType;
 
     private double balance;
+    private String KycStatus;
 
     @PrePersist
     public void generateAccountDetails() {
@@ -68,5 +69,6 @@ public class Accounts {
         this.pin = String.format("%04d", (int) (Math.random() * 10000));
         this.cvv = String.format("%03d", (int) (Math.random() * 1000));
         this.balance = 0.0;
+        this.KycStatus = "Pending";
     }
 }

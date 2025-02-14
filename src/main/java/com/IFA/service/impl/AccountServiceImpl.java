@@ -40,11 +40,13 @@ public class AccountServiceImpl implements AccountService {
         Accounts account = accountRepository.findByAccountNumber(accountNumber)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
 
-        // Update account balance
+        if (!"Approved".equalsIgnoreCase(account.getKycStatus())) {
+            throw new RuntimeException("KYC not approved. Transactions are not allowed.");
+        }
+
         account.setBalance(account.getBalance() + amount);
         accountRepository.save(account);
 
-        // Update CompanyProfile balanceSheet
         updateCompanyBalance(amount, true); // True for deposit
 
         return account;
@@ -55,30 +57,39 @@ public class AccountServiceImpl implements AccountService {
         Accounts account = accountRepository.findByAccountNumber(accountNumber)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
 
+        if (!"Approved".equalsIgnoreCase(account.getKycStatus())) {
+            throw new RuntimeException("KYC not approved. Transactions are not allowed.");
+        }
+
         if (account.getBalance() < amount) {
             throw new RuntimeException("Insufficient balance");
         }
 
-        // Update account balance
         account.setBalance(account.getBalance() - amount);
         accountRepository.save(account);
 
-        // Update CompanyProfile balanceSheet
         updateCompanyBalance(amount, false); // False for withdrawal
 
         return account;
     }
 
     private void updateCompanyBalance(double amount, boolean isDeposit) {
-        // Assuming there's only one company profile
         CompanyProfile companyProfile = companyProfileRepository.findAll().stream().findFirst()
                 .orElseThrow(() -> new RuntimeException("Company profile not found"));
 
-        // Update balanceSheet based on deposit or withdrawal
         double updatedBalanceSheet = isDeposit ? companyProfile.getBalanceSheet() + amount
                 : companyProfile.getBalanceSheet() - amount;
 
         companyProfile.setBalanceSheet(updatedBalanceSheet);
         companyProfileRepository.save(companyProfile);
+    }
+
+    @Override
+    public Accounts verifyKyc(String accountNumber, String kycStatus) {
+        Accounts account = accountRepository.findByAccountNumber(accountNumber)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        account.setKycStatus(kycStatus);
+        return accountRepository.save(account);
     }
 }

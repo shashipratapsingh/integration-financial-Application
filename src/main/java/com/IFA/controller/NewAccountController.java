@@ -16,27 +16,33 @@ public class NewAccountController {
         this.accountService = accountService;
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
+    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager', 'ROLE_User')")
     @PostMapping("/create")
     public ResponseEntity<Accounts> createNewAccount(@RequestBody Accounts account) {
         return ResponseEntity.ok(accountService.createNewAccount(account));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
+    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager', 'ROLE_User')")
     @GetMapping("/balance/{accountNumber}")
     public ResponseEntity<Double> checkBalance(@PathVariable String accountNumber) {
         return ResponseEntity.ok(accountService.checkBalance(accountNumber));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
+    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager', 'ROLE_User')")
     @PostMapping("/deposit/{accountNumber}/{amount}")
     public ResponseEntity<Accounts> deposit(@PathVariable String accountNumber, @PathVariable double amount) {
         return ResponseEntity.ok(accountService.depositAmount(accountNumber, amount));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager','ROLE_User')")
+    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager', 'ROLE_User')")
     @PostMapping("/withdraw/{accountNumber}/{amount}")
     public ResponseEntity<Accounts> withdraw(@PathVariable String accountNumber, @PathVariable double amount) {
         return ResponseEntity.ok(accountService.withdrawAmount(accountNumber, amount));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_Admin', 'ROLE_Manager')")
+    @PostMapping("/verifyKyc/{accountNumber}/{kycStatus}")
+    public ResponseEntity<Accounts> verifyKyc(@PathVariable String accountNumber, @PathVariable String kycStatus) {
+        return ResponseEntity.ok(accountService.verifyKyc(accountNumber, kycStatus));
     }
 }
