@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7e64dd6-e661-498b-9c6b-0a03df265aa2" name="Changes" comment="payments related code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/A_QuestionList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/AverageList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/ConcatenateStrings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/ConvertListToUppercase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/EmployeeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/EvenOddNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FindDuplicateElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FindHighestPaidEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FindSecondHighestNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FindTheMostFrequentElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FirstLetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/FrequencyDuplicateCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/GroupByLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/LengthGreaterGivenNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/MargeTwoArrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/RemoveDuplicateList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/ReversString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/SecondHeightNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/ShortList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/SortEmployeesBySalaryDescendingOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/StartWithSpecificCharector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/IFA/util/SumAllElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/AuthServicesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/AuthServicesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/IFA/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/IFA/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/AuthServicesApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/IFA/AuthServicesApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/IFA/repository/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/IFA/repository/AccountRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +77,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AuthServicesApplication.executor": "Debug",
+    "Application.DuplicateCharacters.executor": "Run",
+    "Application.FrequencyDuplicateCharacters.executor": "Run",
     "Maven.AuthServices [clean,install].executor": "Run",
     "Maven.AuthServices [clean].executor": "Run",
     "Maven.AuthServices [deploy].executor": "Run",
@@ -69,7 +90,7 @@
     "git-widget-placeholder": "openNewAccount",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/BeProjects/om prakash/Integrated Financial Application",
+    "last_opened_file_path": "D:/BeProjects/om prakash/Integrated Financial Application/src/main/java/com/IFA",
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -78,10 +99,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BeProjects\om prakash\Integrated Financial Application\src\main\java\com\IFA" />
       <recent name="D:\BeProjects\om prakash\Integrated Financial Application" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.FrequencyDuplicateCharacters">
     <configuration name="AuthServicesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -97,8 +119,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DuplicateCharacters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.IFA.util.DuplicateCharacters" />
+      <module name="IFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.IFA.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrequencyDuplicateCharacters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.IFA.util.FrequencyDuplicateCharacters" />
+      <module name="IFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.IFA.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FrequencyDuplicateCharacters" />
+        <item itemvalue="Application.DuplicateCharacters" />
         <item itemvalue="Application.AuthServicesApplication" />
       </list>
     </recent_temporary>
